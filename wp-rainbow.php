@@ -5,7 +5,7 @@ Plugin Name: WordPress Rainbow Hilite
 Plugin URI: http://wordpress.org/plugins/wp-rainbow-hilite/
 Description: Code Syntax coloring using <a href="http://craig.is/making/rainbows">rainbow</a>.
 Author: Jörn Lund
-Version: 1.0.2
+Version: 1.0.3
 Author URI: https://github.com/mcguffin
 License: GPL2
 
@@ -13,7 +13,7 @@ Text Domain: wp-rainbow-hilite
 Domain Path: /languages/
 */
 
-/*  Copyright 2014  Jörn Lund  (email : joern@podpirate.org)
+/*  Copyright 2014  Jörn Lund  (email : joern AT podpirate DOT org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -62,7 +62,7 @@ class WPRainbow {
 		add_action( 'init' , array( &$this , 'init' ) );
 		add_filter( 'wp_kses_allowed_html' , array( &$this , 'allow_pre_tag' ) , 10 , 2 );
 
-		add_action( 'wp_enqueue_scripts' , array( &$this , 'enqueue_assets' ) );
+		add_action( 'wp_enqueue_scripts' , array( &$this , 'enqueue_assets' ) , 20 );
 		
 		add_option('wprainbow_load_minified' , true );
 		add_option('wprainbow_line_numbers' , false );
